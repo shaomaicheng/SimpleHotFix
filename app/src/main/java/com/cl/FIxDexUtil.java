@@ -61,6 +61,8 @@ public class FIxDexUtil {
         File[] listFiles = fileDir.listFiles();
         for (File file : listFiles) {
             if (file.getName().startsWith("classes") &&
+                    file.getName().endsWith(DEX_SUFFIX)
+                ||
                     (file.getName().endsWith(APK_SUFFIX)
                         || file.getName().endsWith(JAR_SUFFIX)
                         || file.getName().endsWith(ZIP_SUFFIX))) {

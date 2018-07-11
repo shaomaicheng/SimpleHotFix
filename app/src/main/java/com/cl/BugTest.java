@@ -11,6 +11,7 @@ public class BugTest {
         // mock a bug
         int i = 10;
         int a = 0;
+//        int a = 1;
         Toast.makeText(context, "Hello, Minuit: " + i / a, Toast.LENGTH_SHORT).show();
     }
 }
