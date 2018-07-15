@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,12 +21,19 @@ public class MainActivity extends AppCompatActivity {
             FIxDexUtil.loadFixDex(this, Environment.getExternalStorageDirectory());
         }
 
-        new Thread(new Runnable() {
+        btnFix.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                startActivity(new Intent(MainActivity.this, TestActivity.class));
+            public void onClick(View v) {
+                new BugTest().getBug(MainActivity.this);
             }
-        }).start();
+        });
+
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                startActivity(new Intent(MainActivity.this, TestActivity.class));
+//            }
+//        }).start();
     }
 
     private void init() {
