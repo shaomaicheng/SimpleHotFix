@@ -60,7 +60,7 @@ public class FIxDexUtil {
                 new File(context.getFilesDir(), DEX_DIR);
         File[] listFiles = fileDir.listFiles();
         for (File file : listFiles) {
-            if (file.getName().startsWith("classes") &&
+            if (file.getName().startsWith("patch") &&
                     file.getName().endsWith(DEX_SUFFIX)
                 ||
                     (file.getName().endsWith(APK_SUFFIX)
